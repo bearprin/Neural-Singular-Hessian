@@ -62,7 +62,7 @@ python pl_conv_finetune_shapespace.py
 
 #### 3.4 Pre-trained models
 
-We use 8 RTX4090 for training. The pre-trained models already exist. After preparing data, follow 3.3 and run the code
+We use 8 RTX 3090 for training. The pre-trained models already exist under the shapespace/log_conv_all_half_eikonal_1e-4_amsgrad_200_epoch_cos_1e-6_1500_2. After preparing data, follow 3.3 to run the code
 
 ### 4. Evaluation
 
