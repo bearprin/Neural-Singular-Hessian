@@ -47,6 +47,7 @@ Change 'dataset_path', 'train_split_path' and 'test_split_path' in shapespace/sh
 You may need to tune the number of devices in pl_conv_train_shapespace.py based on the doc of pytorch-lightning
 
 ```
+cd shapespace
 python pl_conv_train_shapespace.py
 ```
 
@@ -55,6 +56,7 @@ python pl_conv_train_shapespace.py
 The code first inference directly from the logdir, then fine-tuning the network and output the final result
 
 ```
+cd shapespace
 python pl_conv_finetune_shapespace.py
 ```
 
