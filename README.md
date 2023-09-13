@@ -34,7 +34,7 @@ python run_sdf_recon.py
 
 ### 3. Shape Space Learning with DFaust
 
-We use [pytorch-lightning](https://lightning.ai/) for shape space shape learning. Note that the newest version may not be compatible with our code.
+We use [pytorch-lightning](https://lightning.ai/) for shape space shape learning. Noting that the newest version may not be compatible with our code.
 
 #### 3.1 Data Preparation
 
@@ -53,7 +53,7 @@ python pl_conv_train_shapespace.py
 
 #### 3.3 Test and Fine-tuning
 
-The code first inference directly from the logdir, then fine-tuning the network and output the final result
+The code first loaded the model in the logdir, and then inference directly. After that, the code fine-tuning the network and outputs the final result
 
 ```
 cd shapespace
@@ -62,7 +62,7 @@ python pl_conv_finetune_shapespace.py
 
 #### 3.4 Pre-trained models
 
-We use 8 RTX4090 for training. The pre-trained models already exist. After preprating data, follow 3.3 run the code
+We use 8 RTX4090 for training. The pre-trained models already exist. After preparing data, follow 3.3 and run the code
 
 ### 4. Evaluation
 
