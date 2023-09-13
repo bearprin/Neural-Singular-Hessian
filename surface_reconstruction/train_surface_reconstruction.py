@@ -63,7 +63,7 @@ max_f1 = -np.inf
 for epoch in range(args.num_epochs):
     # For each batch in the dataloader
     for batch_idx, data in enumerate(train_dataloader):
-        if batch_idx != 0 and (batch_idx % 500 == 0):
+        if batch_idx != 0 and (batch_idx % 500 == 0 or batch_idx == len(train_dataloader) - 1):
             output_dir = os.path.join(logdir, 'vis')
             os.makedirs(output_dir, exist_ok=True)
             vis.plot_cuts_iso(net.decoder, save_path=os.path.join(output_dir, str(batch_idx) + '.html'))

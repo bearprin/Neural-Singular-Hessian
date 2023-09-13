@@ -35,7 +35,7 @@ def relax_eikonal_loss(nonmnfld_grad, mnfld_grad, min=.8, max=0.1, eikonal_type=
 
     grad_norm = all_grads.norm(2, dim=-1) + 1e-12
     if udf:
-        term = torch.relu((grad_norm - max))
+        pass
     else:
         term = torch.relu(-(grad_norm - min))
     if eikonal_type == 'abs':
@@ -157,8 +157,9 @@ class MorseLoss(nn.Module):
 
         # eikonal term
         # eikonal_term = eikonal_loss(nonmnfld_grad, mnfld_grad=mnfld_grad, eikonal_type='abs')
-        eikonal_term = eikonal_loss(None, mnfld_grad=mnfld_grad, eikonal_type='abs')
+        # Sometimes > relax may leading to bad results, use another type relax
         # eikonal_term = relax_eikonal_loss(None, mnfld_grad=mnfld_grad, udf=self.udf)
+        eikonal_term = eikonal_loss(None, mnfld_grad=mnfld_grad, eikonal_type='abs')
 
         # inter term
         inter_term = torch.exp(-1e2 * torch.abs(non_manifold_pred)).mean()

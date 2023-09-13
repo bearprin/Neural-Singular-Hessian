@@ -6,7 +6,7 @@ Code of Neural-Singular-Hessian: Implicit Neural Representation of Unoriented Po
 
 ![RP](assets/RP.jpg)
 
-### Requirements
+### 1. Requirements
 
 Our cod uses [PyTorch](https://pytorch.org/).
 
@@ -19,7 +19,7 @@ conda env create -f env.yaml
 conda activate neural_singular
 ```
 
-### Overfitting Single Shape
+### 2. Overfitting Single Shape
 
 1. Put your data to ./data/sdf/input, some data already exists
 
@@ -32,23 +32,23 @@ python run_sdf_recon.py
 
 **Results mesh are saved in ./surface_reconstruction/log/sdf/result_meshes**
 
-### Shape Space Learning with DFaust
+### 3. Shape Space Learning with DFaust
 
 We use [pytorch-lightning](https://lightning.ai/) for shape space shape learning. Note that the newest version may not be compatible with our code.
 
-#### Data Preparation
+#### 3.1 Data Preparation
 
 Refer to [DOGNN](https://github.com/microsoft/DualOctreeGNN#4-unsupervised-surface-reconstruction-with-dfaust) to prepare your data.
 
 Change 'dataset_path', 'train_split_path' and 'test_split_path' in shapespace/shapespace_dfaust_args.py to your DOGNN path based default settings
 
-#### Train
+#### 3.2 Train
 
-#### Test and Fine-tuning
+#### 3.3 Test and Fine-tuning
 
-#### Pretrained models
+#### 3.4 Pretrained models
 
-### Evaluation
+### 4. Evaluation
 
 For evaluation of results, [POCO](https://github.com/valeoai/POCO) has provided a great script based on [ConvONet](https://github.com/autonomousvision/convolutional_occupancy_networks). Please refer to their [code](https://github.com/valeoai/POCO/blob/main/eval/src/eval.py).
 
@@ -59,4 +59,17 @@ This code is heavily based of [DiGS](https://github.com/Chumbyte/DiGS) and [idf]
 Thanks to them impressive works.
 
 ### Bibtex
+
+```bash
+@article{zixiong23neuralsingular,
+author = {Zixiong Wang, Yunxiao Zhang, Rui Xu, Fan Zhang, Pengshuai Wang, Shuangmin Chen, Shiqing Xin, Wenping Wang, Changhe Tu},
+title = {Neural-Singular-Hessian: Implicit Neural Representation of Unoriented Point Clouds by Enforcing Singular Hessian},
+year = {2023},
+journal = {ACM Transactions on Graphics (TOG)},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA}
+}
+```
+
+
 
