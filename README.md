@@ -56,7 +56,7 @@ For evaluation of results, [POCO](https://github.com/valeoai/POCO) has provided 
 
 This code is heavily based of [DiGS](https://github.com/Chumbyte/DiGS) and [idf](https://github.com/yifita/idf).
 
-Thanks to them impressive works.
+Thanks to their impressive works.
 
 ### Bibtex
 
