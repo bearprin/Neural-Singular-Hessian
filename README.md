@@ -23,7 +23,7 @@ conda activate neural_singular
 
 1. Put your data to ./data/sdf/input, some data already exists
 
-2. Switch to the folder surface_reconstruction, run ./run_sdf_recon.py to reconstruct the surface. **The script will reconstruct all shapes under the ./data/sdf/input (*.xyz and *.ply) files**
+2. Switch to the folder surface_reconstruction, run ./run_sdf_recon.py to reconstruct the surface. **The script will reconstruct all shapes under the ./data/sdf/input (\*.xyz and \*.ply) files**
 
 ```
 cd surface_reconstruction
