@@ -5,10 +5,6 @@ import time
 import numpy as np
 import tqdm
 
-# import pymesh
-
-# import open3d as o3d
-
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import torch
 from torch.utils.data import DataLoader
@@ -17,10 +13,9 @@ from pytorch_lightning.callbacks import LearningRateMonitor
 from pytorch_lightning.callbacks.progress import TQDMProgressBar
 
 from shapespace.dfaust_dataset import DFaustDataSet
-from models import NewNetwork, MorseLoss
+from models import ShapeNetwork, MorseLoss
 import utils.utils as utils
 import shapespace.shapespace_dfaust_args as shapespace_dfaust_args
-from shapespace.shapespace_utils import mkdir_ifnotexists
 
 # get training parameters
 args = shapespace_dfaust_args.get_args()
@@ -28,11 +23,11 @@ logdir = os.path.join(args.logdir)
 os.makedirs(logdir, exist_ok=True)
 log_file, log_writer_train, log_writer_test, model_outdir = utils.setup_logdir(logdir, args)
 
-mkdir_ifnotexists(os.path.join(logdir, "trained_models"))
 project_dir = os.path.join(logdir, "trained_models")
 
 os.system('cp %s %s' % (__file__, logdir))  # backup the current training file
-os.system('cp %s %s' % ('../models/DiGS.py', logdir))  # backup the models files
+os.system('cp %s %s' % ('../models/new_network.py', logdir))  # backup the models files
+os.system('cp %s %s' % ('../models/convolutionalfeature.py', logdir))  # backup the models files
 os.system('cp %s %s' % ('../models/losses.py', logdir))  # backup the models files
 
 
@@ -58,8 +53,8 @@ class BaseTrainer(pl.LightningModule):
         super(BaseTrainer, self).__init__()
         self.args = args
         self.learning_rate = args.test_lr
-        self.net = NewNetwork(decoder_hidden_dim=args.decoder_hidden_dim,
-                              decoder_n_hidden_layers=args.decoder_n_hidden_layers)
+        self.net = ShapeNetwork(decoder_hidden_dim=args.decoder_hidden_dim,
+                                decoder_n_hidden_layers=args.decoder_n_hidden_layers)
         self.criterion = MorseLoss(weights=args.test_loss_weights, loss_type=args.test_loss_type,
                                    div_decay=args.morse_decay,
                                    div_type=args.morse_type, bidirectional_morse=args.bidirectional_morse)

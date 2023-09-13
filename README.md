@@ -38,15 +38,29 @@ We use [pytorch-lightning](https://lightning.ai/) for shape space shape learning
 
 #### 3.1 Data Preparation
 
-Refer to [DOGNN](https://github.com/microsoft/DualOctreeGNN#4-unsupervised-surface-reconstruction-with-dfaust) to prepare your data.
+Refer to [DOGNN](https://github.com/microsoft/DualOctreeGNN#41-data-preparation) to prepare your data.
 
 Change 'dataset_path', 'train_split_path' and 'test_split_path' in shapespace/shapespace_dfaust_args.py to your DOGNN path based default settings
 
 #### 3.2 Train
 
+You may need to tune the number of devices in pl_conv_train_shapespace.py based on the doc of pytorch-lightning
+
+```
+python pl_conv_train_shapespace.py
+```
+
 #### 3.3 Test and Fine-tuning
 
-#### 3.4 Pretrained models
+The code first inference directly from the logdir, then fine-tuning the network and output the final result
+
+```
+python pl_conv_finetune_shapespace.py
+```
+
+#### 3.4 Pre-trained models
+
+We use 8 RTX4090 for training. The pre-trained models already exist. After preprating data, follow 3.3 run the code
 
 ### 4. Evaluation
 
@@ -56,7 +70,7 @@ For evaluation of results, [POCO](https://github.com/valeoai/POCO) has provided 
 
 This code is heavily based of [DiGS](https://github.com/Chumbyte/DiGS) and [idf](https://github.com/yifita/idf).
 
-Thanks to their impressive works.
+Thanks to their impressive work.
 
 ### Bibtex
 
@@ -66,8 +80,7 @@ author = {Zixiong Wang, Yunxiao Zhang, Rui Xu, Fan Zhang, Pengshuai Wang, Shuang
 title = {Neural-Singular-Hessian: Implicit Neural Representation of Unoriented Point Clouds by Enforcing Singular Hessian},
 year = {2023},
 journal = {ACM Transactions on Graphics (TOG)},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA}
+publisher = {ACM}
 }
 ```
 

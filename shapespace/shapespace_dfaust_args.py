@@ -26,7 +26,7 @@ def add_args(parser):
     parser.add_argument('--test_split_path', type=str,
                         default='/home/bearprin/DualOctreeGNN/data/dfaust/filelist/test.txt',
                         help='path to split file')
-    parser.add_argument('--num_epochs', type=int, default=3000)
+    parser.add_argument('--num_epochs', type=int, default=200)
     parser.add_argument('--lr', type=float, default=1e-4, help='initial learning rate')
     parser.add_argument('--test_lr', type=float, default=1e-5, help='initial learning rate')
     parser.add_argument('--test_iter', type=int, default=3000, help='test_optim_iter')

@@ -50,7 +50,7 @@ class BaseTrainer(pl.LightningModule):
         self.args = args
         self.learning_rate = args.lr
         self.net = ShapeNetwork(decoder_hidden_dim=args.decoder_hidden_dim,
-                              decoder_n_hidden_layers=args.decoder_n_layers)
+                              decoder_n_hidden_layers=args.decoder_n_hidden_layers)
 
         self.criterion = MorseLoss(weights=args.loss_weights, loss_type=args.loss_type, div_decay=args.morse_decay,
                                    div_type=args.morse_type, bidirectional_morse=args.bidirectional_morse)
