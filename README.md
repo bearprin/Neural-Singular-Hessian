@@ -15,7 +15,7 @@ The code was tested with Python 3.8, torch 1.31.1, CUDA 11.6 on Ubuntu 18.04.
 Using conda to create the environment and activate it.
 
 ```bash
-conda env create - f env.yml
+conda env create -f env.yaml
 conda activate neural_singular
 ```
 
@@ -23,10 +23,14 @@ conda activate neural_singular
 
 1. Put your data to ./data/sdf/input, some data already exists
 
-2. Switch to the folder surface_reconstruction, run ./run_sdf_recon.py to reconstruct the surface.
-   The script will reconstruct all shapes under the ./data/sdf/input (*.xyz and *.ply) files
+2. Switch to the folder surface_reconstruction, run ./run_sdf_recon.py to reconstruct the surface. **The script will reconstruct all shapes under the ./data/sdf/input (*.xyz and *.ply) files**
 
-Results mesh are saved in ./surface_reconstruction/log/sdf/result_meshes
+```
+cd surface_reconstruction
+python run_sdf_recon.py
+```
+
+**Results mesh are saved in ./surface_reconstruction/log/sdf/result_meshes**
 
 ### Shape Space Learning with DFaust
 
