@@ -2,7 +2,7 @@
 
 Code of Neural-Singular-Hessian: Implicit Neural Representation of Unoriented Point Clouds by Enforcing Singular Hessian. ACM Transactions on Graphics (SIGGRAPH Asia 2023).
 
-[Project Page](https://bearprin.com/publications/neural-singular-hessian23wang/) &nbsp;/ [**Arxiv**](https://arxiv.org/abs/2309.01793) &nbsp;/ [Video](https://www.youtube.com/embed/dGHZjygGssY?si=Oo1McRc_CYGK6Apz)__
+[**Project Page**](https://bearprin.com/publications/neural-singular-hessian23wang/) &nbsp;/ [**Arxiv**](https://arxiv.org/abs/2309.01793) &nbsp;/ [**Video**](https://www.youtube.com/embed/dGHZjygGssY?si=Oo1McRc_CYGK6Apz)
 
 ![RP](assets/RP.jpg)
 
