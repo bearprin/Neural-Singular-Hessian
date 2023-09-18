@@ -82,6 +82,9 @@ author = {Zixiong Wang, Yunxiao Zhang, Rui Xu, Fan Zhang, Pengshuai Wang, Shuang
 title = {Neural-Singular-Hessian: Implicit Neural Representation of Unoriented Point Clouds by Enforcing Singular Hessian},
 year = {2023},
 journal = {ACM Transactions on Graphics (TOG)},
+volume = {42},
+number = {6},
+doi = {10.1145/3618311},
 publisher = {ACM}
 }
 ```
